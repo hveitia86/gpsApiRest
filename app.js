@@ -35,6 +35,10 @@ app.use(router);
 router.route('/gpsCoords')
   .get(GPSCtrl.findAllGPS)
   .post(GPSCtrl.addGPSCoord);
+  
+router.route('/gpsCoords/:id', cors())
+  .options(GPSCtrl.optionGpsCoords)
+  .delete(GPSCtrl.deleteGpsCoords);  
 
 router.route('/gpsCoords/:phone', cors())
   .get(GPSCtrl.findByPhoneNumber)
@@ -52,6 +56,6 @@ app.use('/api', router);
 
 
 // Start server
-app.listen(80, function() {
+app.listen(3000, function() {
   console.log("Node server running on http://localhost:3000");
 });

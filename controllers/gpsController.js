@@ -47,3 +47,28 @@ exports.addGPSCoord = function(req, res) {
     res.status(200).jsonp(gpsCoord);
     });
 };
+
+//OPTIONS Allow CORS to DELETE
+exports.optionGpsCoords = function(req, res, next) {
+
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'DELETE');
+	res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type');
+
+	next();
+}
+
+//DELETE Delete gpsCoord
+exports.deleteGpsCoords = function(req, res){
+
+    GPS.findById(req.params.id, function(err, gpsCoord) {
+
+        gpsCoord.remove(function(err) {
+
+            if(err) return res.status(500).send(err.message);
+
+      		res.status(200).jsonp('OK');
+        })
+    });
+
+};
