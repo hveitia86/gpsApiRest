@@ -21,6 +21,7 @@ exports.addTelephoneAntenna = function(req, res) {
       radio:         req.body.radio,
       long:          req.body.long,
       lat:           req.body.lat,
+      comment:       req.body.comment
 
     });
 
@@ -38,6 +39,8 @@ exports.editTelephoneAntenna = function(req, res){
 		telephoneAntenna.lat   =  req.body.lat,
 		telephoneAntenna.long  =  req.body.long,
 		telephoneAntenna.radio =  req.body.radio,
+        telephoneAntenna.comment =  req.body.comment,
+        
 
 		telephoneAntenna.save(function(error) {
 

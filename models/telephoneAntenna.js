@@ -4,6 +4,7 @@ exports = module.exports = function(app, mongoose) {
     radio:    { type: String },
     long:     { type: String },
     lat:      { type: String },
+    comment:  { type: String}
   });
 
   mongoose.model('TelephoneAntenna', telephoneAntennaSchema);
