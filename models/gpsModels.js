@@ -7,7 +7,7 @@ exports = module.exports = function(app, mongoose) {
     long:          { type: String },
     lat:           { type: String },
     temp:	   { type: String },
-    co2: 	   { type: String },
+    CO2: 	   { type: String },
   });
 
   mongoose.model('GPS', gpsSchema);

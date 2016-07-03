@@ -39,8 +39,8 @@ exports.addGPSCoord = function(req, res) {
     time:          req.body.time,
     long:          req.body.long,
     lat:           req.body.lat,
-    temp:	   req.body.tem,
-    co2:	   req.body.co2,
+    temp:	   req.body.temp,
+    CO2:	   req.body.CO2,
     
   });
 
